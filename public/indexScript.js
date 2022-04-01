@@ -10,7 +10,7 @@ function sendSearch(e) {
             q: e.target.searchquery.value.trim(),
         })
     
-        const searchUrl = `${window.location.href}/search?${params.toString()}`
+        const searchUrl = `${window.location.origin}/search?${params.toString()}`
         
         // Go to search webpage if 'Google Search' is selected
         if (e.submitter.name === "search") {
@@ -21,7 +21,7 @@ function sendSearch(e) {
             })
             // Otherwise make an API call to get the
             // first search result link and go to it
-            const dataUrl = `${window.location.href}/requestResults?${params.toString()}`
+            const dataUrl = `${window.location.origin}/requestResults?${params.toString()}`
             fetch(dataUrl)
             .then(res => res.json())
             .then(data => {window.location.href = data['organic_results'][0]['link'];})
