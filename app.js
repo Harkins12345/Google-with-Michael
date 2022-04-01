@@ -1,5 +1,5 @@
 // NodeJS doesn't have fetch built in
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const axios = require('axios')
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -36,7 +36,7 @@ app.get('/requestResults', (req, res) => {
     // Thanks to serpapi.com for the live Google search data in JSON
     // See '/data.js' for the file structure of a search
     const url = `https://serpapi.com/search.json?${params.toString()}`
-    fetch(url)
+    axios.get(url)
     .then(search_response => search_response.json())
     .then(data => res.json(data))
     .catch(console.warn)
