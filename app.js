@@ -37,7 +37,7 @@ app.get('/requestResults', (req, res) => {
     // See '/data.js' for the file structure of a search
     const url = `https://serpapi.com/search.json?${params.toString()}`
     axios.get(url)
-    .then(search_response => search_response.json())
+    .then(search_response => search_response.data)
     .then(data => res.json(data))
     .catch(console.warn)
     //Comment above and uncomment below to use test data from search "coffee"
