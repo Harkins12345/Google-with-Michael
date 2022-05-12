@@ -9,6 +9,8 @@ Building Google's page in dark mode with Albert Stoykov and Michael Harkins-Melo
 
 ### Usage
 
+The project is also deployed on Heroku: https://google-lap1-pairscallenge.herokuapp.com/
+
 `cd ../server/` and run `npm run start`
 
 - Open your default browser and go to `http://localhost:3000/`
